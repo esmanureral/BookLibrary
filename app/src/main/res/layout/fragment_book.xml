@@ -31,7 +31,7 @@
     android:layout_marginStart="20dp"
     android:layout_marginTop="20dp"
     android:layout_marginEnd="20dp"
-    android:hint="Kitap Adını giriniz"
+    android:hint="Kitap adını giriniz"
     android:inputType="text"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -44,23 +44,43 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Yazarın  Adını giriniz"
+        android:hint="Yazarın  adını giriniz"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isimText" />
 
 
+    <EditText
+        android:id="@+id/aciklamatext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Açıklama giriniz"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top|start"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yazarText" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
         android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yazarText">
+        app:layout_constraintTop_toBottomOf="@+id/aciklamatext">
 
         <!-- Kaydet Butonu -->
         <Button
@@ -68,14 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:padding="16dp"
-            android:text="Kaydet"
-            android:textColor="@android:color/white"
             android:backgroundTint="@color/blue"
             android:drawableStart="@android:drawable/ic_menu_save"
             android:drawablePadding="8dp"
             android:elevation="6dp"
-            android:onClick="kaydet" />
+            android:onClick="kaydet"
+            android:padding="16dp"
+            android:text="Kaydet"
+            android:textColor="@android:color/white" />
 
         <!-- Sil Butonu -->
         <Button
@@ -83,13 +103,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:padding="16dp"
-            android:text="Sil"
-            android:textColor="@android:color/white"
             android:backgroundTint="@color/red"
             android:drawableStart="@drawable/baseline_delete_24"
             android:drawablePadding="8dp"
             android:elevation="6dp"
-            android:onClick="sil" />
+            android:onClick="sil"
+            android:padding="16dp"
+            android:text="Sil"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

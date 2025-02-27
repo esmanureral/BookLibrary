@@ -35,6 +35,8 @@ import java.io.ByteArrayOutputStream
 import java.io.IOException
 
 
+//Kullanıcının litap bilgilerini girmesi,görsel seçmesi ve bu bilgileri kaydetmesi kaydedilen bilgilerin silinmesi
+
 class BookFragment : Fragment() {
     private var _binding: FragmentBookBinding? = null
     private val binding get() = _binding!!
@@ -97,6 +99,7 @@ class BookFragment : Fragment() {
     private fun handleResponse(book: Book) {
         binding.isimText.setText(book.isim)
         binding.yazarText.setText(book.yazar)
+        binding.aciklamatext.setText(book.aciklama)
         val bitmap = BitmapFactory.decodeByteArray(book.gorsel, 0, book.gorsel.size)
         binding.imageView.setImageBitmap(bitmap)
         secilenBook = book
@@ -105,6 +108,7 @@ class BookFragment : Fragment() {
     private fun kaydet(view: View) {
         val isim = binding.isimText.text.toString()
         val yazar = binding.yazarText.text.toString()
+        val aciklama=binding.aciklamatext.text.toString()
 
         if (secilenBitmap != null) {
             val kucukBitmap = kucukBitmapOlustur(secilenBitmap!!, 300)
@@ -112,7 +116,7 @@ class BookFragment : Fragment() {
             kucukBitmap.compress(Bitmap.CompressFormat.PNG, 50, outputStream)
             val byteDizisi = outputStream.toByteArray()
 
-            val book = Book(isim, yazar, byteDizisi)
+            val book = Book(isim, yazar, byteDizisi,aciklama)
 
             mDisposable.add(
                 bookDao.insert(book)

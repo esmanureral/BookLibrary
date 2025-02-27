@@ -13,7 +13,10 @@ class Book(
     @ColumnInfo(name = "yazar")
     var yazar:String,
     @ColumnInfo(name="gorsel")
-    var gorsel:ByteArray
+    var gorsel:ByteArray,
+    @ColumnInfo(name="aciklama")
+    var aciklama:String
+
 )
 {
     @PrimaryKey(autoGenerate = true)
