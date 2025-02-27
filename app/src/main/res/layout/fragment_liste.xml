@@ -5,21 +5,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ListeFragment">
+    tools:context=".view.ListeFragment"
+    android:padding="10dp"
+    android:background="@color/white">
 
+    <!-- Başlık TextView -->
+    <TextView
+        android:id="@+id/baslikTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📚 Okuduğum Kitaplar"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="24dp"
+        android:background="@color/grey"
+        android:padding="12dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- RecyclerView -->
+
+    <!-- FloatingActionButton -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listeRecylerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="407dp"
+        android:layout_height="886dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/baslikTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -29,8 +51,10 @@
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:onClick="yeniEkle"
+        android:backgroundTint="@color/lightred"
+        android:tint="@color/white"
+        android:contentDescription="Yeni Kitap Ekle"
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
